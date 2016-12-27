@@ -103,7 +103,7 @@ module Teamcity
 
     def find_build_by_version( build_type, version )
 
-      get_json(build_rest_uri("buildTypes/id:#{build_type}/builds/number:#{version}",nil))
+      get_json(build_rest_uri("buildTypes/id:#{build_type}/builds/number:#{version},branch:unspecified:any",nil))
 
     end
 
