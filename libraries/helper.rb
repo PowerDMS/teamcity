@@ -28,7 +28,7 @@ module Teamcity
     def get_json (uri)
 
       req = build_request uri
-      res = Net::HTTP.start(uri.host, uri.port) { |http|
+      res = Net::HTTP.new(uri.host, uri.port).start { |http|
         http.request(req)
       }
 
