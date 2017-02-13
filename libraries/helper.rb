@@ -52,7 +52,7 @@ module Teamcity
         end
       end
       Chef::Log.info "Downloading file to #{destination}. This may take a while..."
-      Net::HTTP.start(uri.host, uri.port) { |http|
+      Net::HTTP.new(uri.host, uri.port).start { |http|
         Chef::Log.debug "Starting HTTP session..."
         http.request req do |response|
           Chef::Log.debug "Getting HTTP Response"
